@@ -42,12 +42,12 @@ function buildPlot(sample) {
  
     var samples = data.samples;
     var samplesArray = samples.filter(bacteria => bacteria.id == sample);
-    var bactSampleId = samplesArray[0];
+    var bacteriaSampleId = samplesArray[0];
 
  
-    var otu_ids = bactSampleId.otu_ids; 
-    var otu_labels = bactSampleId.otu_labels; 
-    var sample_values = bactSampleId.sample_values;
+    var otu_ids = bacteriaSampleId.otu_ids; 
+    var otu_labels = bacteriaSampleId.otu_labels; 
+    var sample_values = bacteriaSampleId.sample_values;
 
 
     // Use slice() to get the top 10 OTUs values
@@ -117,11 +117,11 @@ function init() {
 
   d3.json("samples.json").then((data) => {
       
-    var bactName = data.names;
+    var bacteriaName = data.names;
 
     // creating options for the drop down list by appending options
     // with the text element and value as 'sample'
-    bactName.forEach((sample) => {
+    bacteriaName.forEach((sample) => {
       selectSample
         .append("option")
         .text(sample)
@@ -129,7 +129,7 @@ function init() {
     });
 
     // To use the first sample to show the plots that people will see
-    var defaultSelection = bactName[0];
+    var defaultSelection = bacteriaName[0];
     buildPlot(defaultSelection)
     getData(defaultSelection);
   });
