@@ -12,3 +12,6 @@ Plotly
 * Display the sample metadata, i.e., an individual's demographic information
 * Display each key-value pair from the metadata JSON object somewhere on the page
 * Update all of the plots any time that a new sample is selected
+
+
+Deployment: https://monicaalina.github.io/Plotly-challenge/
